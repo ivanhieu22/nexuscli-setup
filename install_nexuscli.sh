@@ -6,7 +6,7 @@ sudo apt update && sudo apt upgrade -y
 
 # Bước 2: Cài đặt các gói cần thiết
 echo "Bước 2: Cài đặt các gói build-essential, pkg-config, libssl-dev, git-all..."
-sudo apt install -y build-essential pkg-config libssl-dev git-all
+sudo DEBIAN_FRONTEND=noninteractive apt install -y build-essential pkg-config libssl-dev git-all
 
 # Bước 3: Cài đặt Rust
 echo "Bước 3: Cài đặt Rust..."
@@ -23,7 +23,7 @@ sudo apt update -y
 
 # Bước 6: Cài đặt protobuf-compiler
 echo "Bước 6: Cài đặt protobuf-compiler..."
-sudo apt install -y protobuf-compiler
+sudo DEBIAN_FRONTEND=noninteractive apt install -y protobuf-compiler
 
 # Bước 7: Hiển thị biến PATH để kiểm tra
 echo "Bước 7: Kiểm tra PATH hiện tại..."
