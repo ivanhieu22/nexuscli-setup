@@ -15,7 +15,7 @@ source $HOME/.cargo/env
 
 # Bước 4: Chạy Nexus CLI lần đầu để xác định lỗi
 echo "Bước 4: Chạy Nexus CLI lần đầu..."
-curl https://cli.nexus.xyz/ | sh || echo "Lỗi được xác định, tiếp tục cài protobuf-compiler..."
+curl https://cli.nexus.xyz/ | env DEBIAN_FRONTEND=noninteractive bash || echo "Lỗi được xác định, tiếp tục cài protobuf-compiler..."
 
 # Bước 5: Cập nhật lại hệ thống
 echo "Bước 5: Cập nhật lại hệ thống..."
