@@ -9,11 +9,12 @@ CYAN='\e[36m'
 RESET='\e[0m'
 
 # Bước 1: Cập nhật và nâng cấp hệ thống
+# Bước 1: Cập nhật và nâng cấp hệ thống
 echo -e "${BLUE}Bước 1: Cập nhật hệ thống...${RESET}"
 export DEBIAN_FRONTEND=noninteractive
 sudo sh -c "echo GRUB_DISABLE_OS_PROBER=true >> /etc/default/grub"
 sudo update-grub
-sudo DEBIAN_FRONTEND=noninteractive apt update -y && sudo DEBIAN_FRONTEND=noninteractive apt upgrade -
+sudo DEBIAN_FRONTEND=noninteractive apt update -y && sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
 
 # Bước 2: Cài đặt các gói cần thiết
 echo -e "${CYAN}Bước 2: Cài đặt các gói build-essential, pkg-config, libssl-dev, git-all...${RESET}"
