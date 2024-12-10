@@ -21,9 +21,16 @@ echo -e "${YELLOW}Bước 3: Cài đặt Rust...${RESET}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
-# Bước 4: Chạy Nexus CLI lần đầu để xác định lỗi
+# Bước 4: Chạy Nexus CLI lần đầu và tự động gửi thông tin "Y" bằng expect
 echo -e "${RED}Bước 4: Chạy Nexus CLI lần đầu...${RESET}"
-echo "Y" | curl -sSfL https://cli.nexus.xyz/ | bash || echo -e "${RED}Lỗi được xác định, tiếp tục cài protobuf-compiler...${RESET}"
+sudo apt install -y expect
+expect <<EOF
+spawn curl -sSfL https://cli.nexus.xyz/ | bash
+expect "Do you agree to the Nexus Beta Terms of Use"
+send "Y\r"
+expect eof
+EOF
+|| echo -e "${RED}Lỗi được xác định, tiếp tục cài protobuf-compiler...${RESET}"
 
 # Bước 5: Cập nhật lại hệ thống
 echo -e "${BLUE}Bước 5: Cập nhật lại hệ thống...${RESET}"
