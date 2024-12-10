@@ -23,7 +23,7 @@ source $HOME/.cargo/env
 
 # Bước 4: Chạy Nexus CLI lần đầu và tự động gửi thông tin "Y" bằng yes
 echo -e "${RED}Bước 4: Chạy Nexus CLI lần đầu...${RESET}"
-yes Y | curl -sSfL https://cli.nexus.xyz/ | bash || echo -e "${RED}Lỗi được xác định, tiếp tục cài protobuf-compiler...${RESET}"
+echo -e "Y\nY" | curl -sSfL https://cli.nexus.xyz/ | bash || echo -e "${RED}Lỗi được xác định, tiếp tục cài protobuf-compiler...${RESET}"
 
 # Bước 5: Cập nhật lại hệ thống
 echo -e "${BLUE}Bước 5: Cập nhật lại hệ thống...${RESET}"
@@ -43,4 +43,4 @@ curl https://cli.nexus.xyz/ | bash
 
 # Nhắc nhở người dùng khởi động lại nếu cần
 echo -e "${GREEN}Hoàn tất cài đặt Nexus CLI!${RESET}"
-echo -e "${YELLOW}Khuyến nghị: Khởi động lại hệ thống để áp dụng kernel mới (sudo reboot).${RESET}"
+echo -e "${YELLOW}Designed by Ivan Hieu (http://t.me/ivanhieu22) ⚡${RESET}"
